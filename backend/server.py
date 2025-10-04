@@ -63,6 +63,7 @@ class User(BaseModel):
     emergency_contacts: Optional[List[Dict[str, str]]] = []
     family_members: Optional[List[str]] = []  # User IDs
     role: str = "user"  # user, admin, family_member
+    password_hash: Optional[str] = None  # Store hashed password
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
